@@ -21,7 +21,7 @@ The team members' responsibilities are defined, and the project's elements and d
 * Web Technologies: HTML5, CSS3
 * Interface : VS Code, IntelliJ
 
-  # Other ressources
-  * Diagrams: Draw.io
-  * Monitoring and verification: Jira (link: https://camisoft.atlassian.net/jira/software/projects/COCO/boards/3/backlog)
+# Other ressources
+* Diagrams: Draw.io
+* Monitoring and verification: Jira (link: https://camisoft.atlassian.net/jira/software/projects/COCO/boards/3/backlog)
   
