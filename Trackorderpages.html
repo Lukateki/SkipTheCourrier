@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SKIP THE COURIER</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <div id="header"></div>
+
+  <div class="container mt-5">
+    <h1 class="mb-5">Track Your Courier</h1>
+    <form>
+      <div class="form-group"> <label for="trackingNumber">Tracking Number</label> <input type="text"
+          class="form-control" id="trackingNumber" placeholder="Enter tracking number"> </div> <button type="submit"
+        class="btn btn-primary">Track</button>
+    </form>
+    <div class="mt-5">
+      <h3>Tracking Result</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date & Time</th>
+            <th scope="col">Location</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>2021-04-01 15:30</td>
+            <td>New York</td>
+            <td><img src="https://via.placeholder.com/30" alt="" class="img-thumbnail"> Shipment received</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>2021-04-02 10:30</td>
+            <td>New York</td>
+            <td><img src="https://via.placeholder.com/30" alt="" class="img-thumbnail"> In transit</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>2021-04-03 13:30</td>
+            <td>Chicago</td>
+            <td><img src="https://via.placeholder.com/30" alt="" class="img-thumbnail"> Arrived at destination</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--- Footer -->
+  <div id="footer"></div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function () {
+      $("#header").load("index.html");
+    });
+  </script>
+  <script>
+    $(function () {
+      $("#footer").load("footer.html");
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Add Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('img').popover({
+        html: true,
+        trigger: 'click',
+        content: function () {
+          return '<img src="' + $(this).attr('src') + '" style="max-width: 100%;" />';
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
