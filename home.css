@@ -44,6 +44,43 @@
   border-radius: 5px;
 }
 
+.our-clients {
+  columns: var(--black);
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.our-clients-subtitle {
+  columns: var(--Grey);
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.clients-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.clients-list {
+  display: flex;
+  width: 80%;
+}
+
+.clients-image {
+  width: 50%;
+  object-fit: contain;
+}
+
+.clients-item {
+  margin-top: 50px;
+  flex: 1;
+  align-items: center;
+  text-align: center;
+}
+
 .slider-button:hover {
   background-color: var(--Tint-1);
 }
