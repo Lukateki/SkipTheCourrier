@@ -1,8 +1,8 @@
 .login-page
   {
-    background-color: #F1F3F6;
+    background-color: var(--White);
   .login-form
-    {background-color: #fff;
+    {background-color: var(--White);
     box-shadow: 0px 12px 50px rgba(0, 0, 0, 0.1);
     min-height: 92vh;
     display: flex;
@@ -36,7 +36,7 @@
     i
       {width: 50px;
       height: 50px;
-      background-color: #FD7401;
+      background-color: var(--Primary);
       color: #fff;
       display: grid;
       place-content: center;
@@ -57,12 +57,12 @@
   {text-align: center;
   margin: 15px 0;
   .btn
-   { background-color: #FD7401;
+   { background-color: var(--Primary);
     width: 100%;
     color: #fff;
     font-size: 16px;
     padding: 10px;
-    box-shadow: 0px 8px 12px rgba(253, 116, 1, 0.3);}}
+    box-shadow: 0px 8px 12px var(--Shade-2);;}}
     
 .or-option
   {text-align: center;
@@ -104,10 +104,10 @@
   .btn
     {background-color: #fff;
     width: 100%;
-    color: #FD7401;
+    color: var(--Primary);
     font-size: 16px;
     padding: 10px;
-    border: 1px solid #FD7401;}}
+    border: 1px solid var(--Primary);}}
     
 .login-extra
   {display: flex;
