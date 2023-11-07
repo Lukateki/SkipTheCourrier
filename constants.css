@@ -1,25 +1,112 @@
+/* Color palette */
 :root {
-    --black: #263238;
-    --D_Grey: #4D4D4D;
-    --Grey: #717171;
-    --L_Grey: #89939E;
-    --Grey-blue: #ABBED1;
-    --Silver: #F5F7FA;
-    --White: #FFFFFF;
-    --Primary: #28CB8B;
-    --Secondary: #263238;
-    --Info: #2194f3;
-    --Warning: #FBC02D;
-    --Error: #E53835;
-    --Success:#2E7D31;
-    --Shade-1: #43A046;
-    --Shade-2: #388E3B;
-    --Shade-3: #237D31;
-    --Shade-4: #1B5E1F;
-    --Shade-5: #103E13;
-    --Tint-1: #66BB69;
-    --Tint-2: #81C784;
-    --Tint-3: #A5D6A7;
-    --Tint-4: #C8E6C9;
-    --Tint-5: #E8F5E9;
-  }
+  --black: #263238;
+  --D_Grey: #4d4d4d;
+  --Grey: #717171;
+  --L_Grey: #89939e;
+  --Grey-blue: #abbed1;
+  --Silver: #f5f7fa;
+  --White: #ffffff;
+  --Primary: #28cb8b;
+  --Secondary: #263238;
+  --Info: #2194f3;
+  --Warning: #fbc02d;
+  --Error: #e53835;
+  --Success: #2e7d31;
+  --Shade-1: #43a046;
+  --Shade-2: #388e3b;
+  --Shade-3: #237d31;
+  --Shade-4: #1b5e1f;
+  --Shade-5: #103e13;
+  --Tint-1: #66bb69;
+  --Tint-2: #81c784;
+  --Tint-3: #a5d6a7;
+  --Tint-4: #c8e6c9;
+  --Tint-5: #e8f5e9;
+}
+
+/* Typography */
+
+.body-regular-1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.body-regular-2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.body-regular-3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.body-regular-4 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.body-medium-1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.body-medium-2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.body-medium-3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.body-medium-4 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.headline-1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+}
+
+.headline-2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.headline-3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.headline-4 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+}
