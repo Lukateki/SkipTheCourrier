@@ -14,74 +14,81 @@
 
   <style>
     h1 {
-    text-align: center;
-    }
-    #origin{
-        background-color: #f5f7fa;
-    }
-    #destination{
-        background-color: #f5f7fa;
-    }
-    #weight{
-        background-color: #f5f7fa;
-    }
-    #dimensions{
-        background-color: #f5f7fa;
-
-    }
-    .calculate{
-        display: flex;
-        justify-content: center;
-    }
-    .calculate-button{
-        background-color: var(--Primary);
-        color: white;
-        border: 1px solid var(--Primary) ;
-        padding: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .calculate-button:hover{
-        background-color: var(--Tint-1);
+      text-align: center;
     }
 
+    #origin {
+      background-color: #f5f7fa;
+    }
 
+    #destination {
+      background-color: #f5f7fa;
+    }
+
+    #weight {
+      background-color: #f5f7fa;
+    }
+
+    #dimensions {
+      background-color: #f5f7fa;
+
+    }
+
+    .calculate {
+      display: flex;
+      justify-content: center;
+    }
+
+    .calculate-button {
+      background-color: var(--Primary);
+      color: white;
+      border: 1px solid var(--Primary);
+      padding: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .calculate-button:hover {
+      background-color: var(--Tint-1);
+    }
   </style>
 </head>
 
 <body>
   <!-- Header -->
   <div id="header"></div>
-  <div class="body-regular-1 mt-5">   <h1>Calculating shipping Quote</h1>
-</div>
-   <br><br>
-   
+  <div class="body-regular-1 mt-5">
+    <h1>Calculating shipping Quote</h1>
+  </div>
+  <br><br>
+
   <div class="container-md rounded " id="proposalQuotation">
     <div class="row">
-        <div class="col col-lg-4"></div>
-        <div class="col-md-auto">
- 
+      <div class="col col-lg-4"></div>
+      <div class="col-md-auto">
 
-    <form>
-        <div class="form-group body-regular-2">
-          <h2>Origin and Destination</h2>
-          <label for="origin">Origin</label>
-          <input type="text" class="form-control" id="origin" placeholder="Enter Package Origin">
-          <label for="destination">Destination</label>
-          <input type="text" class="form-control" id="destination" placeholder="Enter Package Destination">
-          <br><br>
-          <h2>Package Dimensions</h2>
-          <label for="weight">Weight</label>
-          <input type="text" class="form-control" id="weight" placeholder="Enter weight [kg]">
-          <label for="dimensions">Dimensions</label>
-          <input type="text" class="form-control" id="dimensions" placeholder="Enter Package Dimensions">
-        </div>
-        <div class="calculate">
-        <button type="submit" class="calculate-button rounded mt-5" >Calculate</button>
-        </div>
-    </form></div>
-           <div class="col col-lg-4"></div>
- </div>
+
+        <form>
+          <div class="form-group body-regular-2">
+            <h2>Origin and Destination</h2>
+            <label for="origin">Origin</label>
+            <input type="text" class="form-control" id="origin" placeholder="Enter Package Origin">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination" placeholder="Enter Package Destination">
+            <br><br>
+            <h2>Package Dimensions</h2>
+            <label for="weight">Weight</label>
+            <input type="text" class="form-control" id="weight" placeholder="Enter weight [kg]">
+            <label for="dimensions">Dimensions</label>
+            <input type="text" class="form-control" id="dimensions" placeholder="Height(cm) x Width(cm) x Length(cm)">
+          </div>
+          <div class="calculate">
+            <button type="submit" class="calculate-button rounded mt-5">Calculate</button>
+          </div>
+        </form>
+      </div>
+      <div class="col col-lg-4"></div>
+    </div>
   </div>
 
 
