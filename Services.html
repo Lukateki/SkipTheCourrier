@@ -10,6 +10,22 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" href="navbar.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="constants.css">
+
+  <style>
+    .quote_button{
+      display: flex;
+      justify-content: center;
+    }
+    .quote-button{
+      background-color: var(--Primary);
+      color: white;
+      border: 1px solid var(--Primary) ;
+      padding: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -44,32 +60,8 @@
     </div>
   </div>
 
-  <div class="container mt-5">
-    <h1 class="mb-5">Request a Quote</h1>
-    <form>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter Name">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter Email">
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone</label>
-        <input type="text" class="form-control" id="phone" placeholder="Enter Phone">
-      </div>
-      <div class="form-group">
-        <label for="service">Service</label>
-        <select class="form-control" id="service">
-          <option>Choose...</option>
-          <option>Service 1</option>
-          <option>Service 2</option>
-          <option>Service 3</option>
-        </select>
-      </div>
-      <button class="custom-btn">Submit</button>
-    </form>
+  <div class="quote_button container mt-5">
+    <button type="submit" class="quote-button rounded" onclick="location.href='proposalQuotation.html'">Calculate Shipping Quote Now!</button>
   </div>
 
   <!-- JS, Popper.js, and jQuery -->

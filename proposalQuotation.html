@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SKIP THE COURIER</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="navbar.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="constants.css">
+
+  <style>
+    h1 {
+    text-align: center;
+    }
+    #origin{
+        background-color: #f5f7fa;
+    }
+    #destination{
+        background-color: #f5f7fa;
+    }
+    #weight{
+        background-color: #f5f7fa;
+    }
+    #dimensions{
+        background-color: #f5f7fa;
+
+    }
+    .calculate{
+        display: flex;
+        justify-content: center;
+    }
+    .calculate-button{
+        background-color: var(--Primary);
+        color: white;
+        border: 1px solid var(--Primary) ;
+        padding: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div id="header"></div>
+  <div class="body-regular-1">   <h1>Calculating shipping Quote</h1>
+</div>
+   <br><br>
+   
+  <div class="container-md rounded " id="proposalQuotation">
+    <div class="row">
+        <div class="col col-lg-4"></div>
+        <div class="col-md-auto">
+ 
+
+    <form>
+        <div class="form-group body-regular-2">
+          <h2>Origin and Destination</h2>
+          <label for="origin">Origin</label>
+          <input type="text" class="form-control" id="origin" placeholder="Enter Package Origin">
+          <label for="destination">Destination</label>
+          <input type="text" class="form-control" id="destination" placeholder="Enter Package Destination">
+          <br><br>
+          <h2>Package Dimensions</h2>
+          <label for="weight">Weight</label>
+          <input type="text" class="form-control" id="weight" placeholder="Enter weight [kg]">
+          <label for="dimensions">Dimensions</label>
+          <input type="text" class="form-control" id="dimensions" placeholder="Enter Package Dimensions">
+        </div>
+        <div class="calculate">
+        <button type="submit" class="calculate-button rounded mt-5" >Calculate</button>
+        </div>
+    </form></div>
+           <div class="col col-lg-4"></div>
+ </div>
+  </div>
+
+
+  <!--- Footer -->
+  <div id="footer"></div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function () {
+      $("#header").load("index.html");
+    });
+  </script>
+  <script>
+    $(function () {
+      $("#footer").load("footer.html");
+    });
+  </script>
+
+</body>
+
+</html>
