@@ -9,7 +9,29 @@
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" href="navbar.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Add Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    .enlarge-img {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90%;
+      max-height: 90%;
+      z-index: 1000;
+    }
+
+    .img-thumbnail:hover {
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
@@ -39,23 +61,34 @@
             <th scope="row">1</th>
             <td>2021-04-01 15:30</td>
             <td>New York</td>
-            <td><img src="https://via.placeholder.com/30" alt="" class="img-thumbnail"> Shipment received</td>
+            <td><img id="myImg0" src="https://via.placeholder.com/30" alt="" class="img-thumbnail"
+                style="width: 50px;max-width:50px"> Shipment received
+            </td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>2021-04-02 10:30</td>
             <td>New York</td>
-            <td><img src="https://via.placeholder.com/30" alt="" class="img-thumbnail"> In transit</td>
+            <td><img id="myImg1" src="https://via.placeholder.com/30" alt="" class="img-thumbnail"
+                style="width: 50px;max-width:50px"> In transit
+            </td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>2021-04-03 13:30</td>
             <td>Chicago</td>
-            <td><img src="https://via.placeholder.com/30" alt="" class="img-thumbnail"> Arrived at destination</td>
+            <td><img id="myImg2" src="logo.png" alt="Snow" class="img-thumbnail" style="width: 50px;max-width:50px">
+              Arrived at destination
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content enlarge-img" id="img01">
   </div>
 
   <!--- Footer -->
@@ -71,11 +104,6 @@
       $("#footer").load("footer.html");
     });
   </script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Add Bootstrap JS and Popper.js -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
   <script>
     $(document).ready(function () {
       $('img').popover({
@@ -86,6 +114,43 @@
         }
       });
     });
+    var modal = document.getElementById("myModal");
+    var img0 = document.getElementById("myImg0");
+    var img1 = document.getElementById("myImg1");
+    var img2 = document.getElementById("myImg2");
+    var modalImg = document.getElementById("img01");
+    var span = document.getElementsByClassName("close")[0];
+
+
+    //////////////////////////////////////////Shipment Received//////////////////////////////////
+
+    img0.onclick = function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    }
+
+    ///////////////////////////////////////////In Transit///////////////////////////////////////
+    img1.onclick = function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    }
+
+    //////////////////////////////////////////Destination//////////////////////////////////////
+    img2.onclick = function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    }
+
+
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
   </script>
 
 </body>
