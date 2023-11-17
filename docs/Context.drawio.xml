@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2023-11-17T03:58:33.109Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="sVplyuL811eCY9Vs2xCz" version="22.1.0" type="google" pages="4">
+<mxfile host="app.diagrams.net" modified="2023-11-17T04:26:07.376Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="kt5tRDVytnWWK-pV_8lA" version="22.1.0" type="google" pages="4">
   <diagram name="contextdiagram" id="iuwJ2_syVWjnZ3PRvNHS">
     <mxGraphModel dx="1434" dy="746" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -401,7 +401,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="ckwV3NuqUMN6fNxS9Zoy" name="ClassDiagram_Grasp_GOF">
-    <mxGraphModel dx="4734" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+    <mxGraphModel dx="4987" dy="878" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1126,7 +1126,7 @@
         <mxCell id="aqzEesnVIrDPiiX5Iq-a-9" value="&lt;div align=&quot;left&quot;&gt;CarrierCatalog is responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Creating Carriers&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Storing Carriers&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Knowing All Carriers&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Creator + Expert&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;GOF Patterns : Singleton&lt;br&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
           <mxGeometry x="510" y="2528" width="200" height="142" as="geometry" />
         </mxCell>
-        <mxCell id="qrRdntrkSlh-nsNjNLeH-133" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=1 1;endArrow=oval;endFill=0;" edge="1" parent="1" source="aqzEesnVIrDPiiX5Iq-a-10" target="JFnerDzSBRm6dhhmcnWx-3">
+        <mxCell id="qrRdntrkSlh-nsNjNLeH-133" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=1 1;endArrow=oval;endFill=0;entryX=-0.009;entryY=0.785;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="aqzEesnVIrDPiiX5Iq-a-10" target="JFnerDzSBRm6dhhmcnWx-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aqzEesnVIrDPiiX5Iq-a-10" value="&lt;div align=&quot;left&quot;&gt;AgentCatalog is responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Creating Agents&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Storing Agents&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Knowing All Agents&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Creator + Expert&lt;br&gt;&lt;/div&gt;&lt;div&gt;GOF Patterns : Singleton&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
@@ -1177,11 +1177,20 @@
         <mxCell id="aqzEesnVIrDPiiX5Iq-a-21" value="&lt;div align=&quot;left&quot;&gt;PaymentFactory is responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Creating appropriate Payment&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Creator&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;GOF Patterns : Factory&lt;br&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
           <mxGeometry x="1070" y="3520" width="223" height="110" as="geometry" />
         </mxCell>
+        <mxCell id="2pL3DsJjJWlg2ED6VL7D-1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=1 1;endArrow=oval;endFill=0;" edge="1" parent="1" source="aqzEesnVIrDPiiX5Iq-a-22" target="SvGzYhx-Y2ZTlVpE46X--1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="aqzEesnVIrDPiiX5Iq-a-22" value="&lt;div align=&quot;left&quot;&gt;Payment is responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- calling the appropriate methods&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Polymorphism&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;GOF Patterns : Strategy&lt;br&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
-          <mxGeometry x="3173" y="3440" width="223" height="110" as="geometry" />
+          <mxGeometry x="3220" y="3440" width="223" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="2pL3DsJjJWlg2ED6VL7D-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=1 1;endArrow=oval;endFill=0;" edge="1" parent="1" source="aqzEesnVIrDPiiX5Iq-a-23" target="SvGzYhx-Y2ZTlVpE46X--10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pL3DsJjJWlg2ED6VL7D-3" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=oval;endFill=0;dashed=1;dashPattern=1 1;" edge="1" parent="1" source="aqzEesnVIrDPiiX5Iq-a-23" target="SvGzYhx-Y2ZTlVpE46X--6">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aqzEesnVIrDPiiX5Iq-a-23" value="&lt;div align=&quot;left&quot;&gt;CreditCard and Paypal are responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Knowing Payment Details&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Making Payment&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Expert&lt;br&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
-          <mxGeometry x="2843" y="3860" width="263" height="110" as="geometry" />
+          <mxGeometry x="2900" y="3980" width="263" height="110" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-136" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=oval;endFill=0;dashed=1;dashPattern=1 1;" edge="1" parent="1" source="aqzEesnVIrDPiiX5Iq-a-25" target="lmzPLS1qNnJ13CQKDR5B-1">
           <mxGeometry relative="1" as="geometry" />
