@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2023-11-17T04:26:07.376Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="kt5tRDVytnWWK-pV_8lA" version="22.1.0" type="google" pages="4">
+<mxfile host="app.diagrams.net" modified="2023-11-17T04:43:51.622Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="NLcNngQbPBxN8r91mpOc" version="22.1.0" type="google" pages="4">
   <diagram name="contextdiagram" id="iuwJ2_syVWjnZ3PRvNHS">
     <mxGraphModel dx="1434" dy="746" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -401,7 +401,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="ckwV3NuqUMN6fNxS9Zoy" name="ClassDiagram_Grasp_GOF">
-    <mxGraphModel dx="4987" dy="878" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+    <mxGraphModel dx="6168" dy="1492" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -747,10 +747,36 @@
             <mxPoint x="640" y="1823" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Or0l-OPvd0LS7Cr--KHt-6" value="Support" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="315" y="1658" width="220" height="330" as="geometry" />
+        <mxCell id="2pL3DsJjJWlg2ED6VL7D-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Or0l-OPvd0LS7Cr--KHt-6" target="JFnerDzSBRm6dhhmcnWx-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="1940" />
+              <mxPoint x="780" y="2360" />
+              <mxPoint x="1160" y="2360" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="Or0l-OPvd0LS7Cr--KHt-7" value="&lt;div&gt;-user : User&lt;br&gt;&lt;/div&gt;&lt;div&gt;-agents : Arraylist&amp;lt;Agent&amp;gt;&lt;/div&gt;&lt;div&gt;-observers : Arraylist&amp;lt;Observer&amp;gt;&lt;/div&gt;&lt;div&gt;-orderID : int&lt;/div&gt;&lt;div&gt;-issue :String&lt;/div&gt;&lt;div&gt;-state: String = &quot;Unresolved&quot;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Or0l-OPvd0LS7Cr--KHt-6" vertex="1">
+        <mxCell id="2pL3DsJjJWlg2ED6VL7D-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Or0l-OPvd0LS7Cr--KHt-6" target="pyMHpRSXEymi-bVCtIsc-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="1880" />
+              <mxPoint x="640" y="2265" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2pL3DsJjJWlg2ED6VL7D-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Or0l-OPvd0LS7Cr--KHt-6" target="Or0l-OPvd0LS7Cr--KHt-29">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="1610" />
+              <mxPoint x="170" y="1610" />
+              <mxPoint x="170" y="1580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Or0l-OPvd0LS7Cr--KHt-6" value="Support" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="205" y="1658" width="220" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="Or0l-OPvd0LS7Cr--KHt-7" value="&lt;div&gt;-observers : Arraylist&amp;lt;Observer&amp;gt;&lt;/div&gt;&lt;div&gt;-orderID : int&lt;/div&gt;&lt;div&gt;-issue :String&lt;/div&gt;&lt;div&gt;-state: String = &quot;Unresolved&quot;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Or0l-OPvd0LS7Cr--KHt-6" vertex="1">
           <mxGeometry y="30" width="220" height="140" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="Or0l-OPvd0LS7Cr--KHt-6" vertex="1">
@@ -764,11 +790,11 @@
         </mxCell>
         <mxCell id="SvvN8CErav5HYjQ3TROk-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.504;entryY=1.005;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=diamond;endFill=1;" parent="1" source="Or0l-OPvd0LS7Cr--KHt-15" target="Or0l-OPvd0LS7Cr--KHt-9" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="430" y="2073" as="targetPoint" />
+            <mxPoint x="320" y="2073" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-15" value="Chat" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="245" y="2081.5" width="360" height="130" as="geometry" />
+          <mxGeometry x="135" y="2081.5" width="360" height="130" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-16" value="-messages : Arraylist&amp;lt;Message&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Or0l-OPvd0LS7Cr--KHt-15" vertex="1">
           <mxGeometry y="30" width="360" height="30" as="geometry" />
@@ -783,7 +809,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-19" value="Message" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="345" y="2313" width="160" height="200" as="geometry" />
+          <mxGeometry x="235" y="2313" width="160" height="200" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-20" value="&lt;div&gt;-userType: String&lt;/div&gt;&lt;div&gt;-userName: String&lt;br&gt;&lt;/div&gt;&lt;div&gt;-message: String&lt;/div&gt;&lt;div&gt;-date: Date&lt;/div&gt;&lt;div&gt;-time: Time&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Or0l-OPvd0LS7Cr--KHt-19" vertex="1">
           <mxGeometry y="30" width="160" height="80" as="geometry" />
@@ -798,16 +824,16 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-27" value="" style="triangle;html=1;direction=north;" parent="1" vertex="1">
-          <mxGeometry x="410" y="1580" width="30" height="15" as="geometry" />
+          <mxGeometry x="300" y="1580" width="30" height="15" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-29" value="&lt;div&gt;Observer&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="-70" y="1483" width="230" height="100" as="geometry" />
+          <mxGeometry x="-180" y="1483" width="230" height="100" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-30" value="&lt;div&gt;+update(): void&lt;/div&gt;&lt;div&gt;&lt;div&gt;+display() : void&lt;br&gt;&lt;/div&gt;+sendMessage(String message) : void&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Or0l-OPvd0LS7Cr--KHt-29" vertex="1">
           <mxGeometry y="40" width="230" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-31" value="UserSupportView" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="-190" y="1673" width="230" height="160" as="geometry" />
+          <mxGeometry x="-300" y="1673" width="230" height="160" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-32" value="&lt;div&gt;-support : Support&lt;/div&gt;&lt;div&gt;-user : User&lt;/div&gt;&lt;div&gt;-status : String&lt;/div&gt;&lt;div&gt;-chatHistory : arrayList&amp;lt;Message&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Or0l-OPvd0LS7Cr--KHt-31" vertex="1">
           <mxGeometry y="30" width="230" height="70" as="geometry" />
@@ -819,7 +845,7 @@
           <mxGeometry y="108" width="230" height="52" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-35" value="AgentSupportView" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="55" y="1673" width="230" height="160" as="geometry" />
+          <mxGeometry x="-55" y="1673" width="230" height="160" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-36" value="&lt;div&gt;-support : Support&lt;/div&gt;&lt;div&gt;-agent : Agent&lt;/div&gt;&lt;div&gt;&lt;div&gt;-status : String&lt;/div&gt;-chatHistory : arrayList&amp;lt;Message&amp;gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Or0l-OPvd0LS7Cr--KHt-35" vertex="1">
           <mxGeometry y="30" width="230" height="70" as="geometry" />
@@ -834,13 +860,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-40" value="" style="triangle;html=1;direction=north;" parent="1" vertex="1">
-          <mxGeometry x="30" y="1583" width="30" height="15" as="geometry" />
+          <mxGeometry x="-80" y="1583" width="30" height="15" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;dashed=1;endArrow=none;endFill=0;" parent="1" source="Or0l-OPvd0LS7Cr--KHt-40" target="Or0l-OPvd0LS7Cr--KHt-35" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-25" value="&lt;div&gt;Subject&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="310" y="1488" width="230" height="90" as="geometry" />
+          <mxGeometry x="200" y="1488" width="230" height="90" as="geometry" />
         </mxCell>
         <mxCell id="Or0l-OPvd0LS7Cr--KHt-26" value="&lt;div&gt;+addObserver(): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;+removeObserver(): void&lt;/div&gt;&lt;div&gt;+notifyObserver(): void&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Or0l-OPvd0LS7Cr--KHt-25" vertex="1">
           <mxGeometry y="40" width="230" height="50" as="geometry" />
@@ -1124,13 +1150,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aqzEesnVIrDPiiX5Iq-a-9" value="&lt;div align=&quot;left&quot;&gt;CarrierCatalog is responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Creating Carriers&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Storing Carriers&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Knowing All Carriers&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Creator + Expert&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;GOF Patterns : Singleton&lt;br&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
-          <mxGeometry x="510" y="2528" width="200" height="142" as="geometry" />
+          <mxGeometry x="580" y="2474" width="200" height="142" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-133" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=1 1;endArrow=oval;endFill=0;entryX=-0.009;entryY=0.785;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="aqzEesnVIrDPiiX5Iq-a-10" target="JFnerDzSBRm6dhhmcnWx-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aqzEesnVIrDPiiX5Iq-a-10" value="&lt;div align=&quot;left&quot;&gt;AgentCatalog is responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Creating Agents&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Storing Agents&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Knowing All Agents&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Creator + Expert&lt;br&gt;&lt;/div&gt;&lt;div&gt;GOF Patterns : Singleton&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
-          <mxGeometry x="510" y="2680" width="200" height="140" as="geometry" />
+          <mxGeometry x="660" y="2670" width="200" height="140" as="geometry" />
         </mxCell>
         <mxCell id="aqzEesnVIrDPiiX5Iq-a-11" value="&lt;div align=&quot;left&quot;&gt;CustomerCatalog is responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Creating Customers&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Storing Customers&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Knowing All Customers&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Creator + Expert&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;GOF Patterns : Singleton&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
           <mxGeometry x="1643.25" y="2588" width="210" height="140" as="geometry" />
@@ -1205,13 +1231,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aqzEesnVIrDPiiX5Iq-a-26" value="&lt;div align=&quot;left&quot;&gt;Message is responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Knowing set of metadata and message&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Expert&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
-          <mxGeometry x="30" y="2332" width="230" height="100" as="geometry" />
+          <mxGeometry x="-80" y="2332" width="230" height="100" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-130" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=1 1;endArrow=oval;endFill=0;" edge="1" parent="1" source="aqzEesnVIrDPiiX5Iq-a-27" target="Or0l-OPvd0LS7Cr--KHt-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aqzEesnVIrDPiiX5Iq-a-27" value="&lt;div align=&quot;left&quot;&gt;Chat is responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Creating Messages&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Adding Messages to the Chat&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Knowing All Messages&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Creator + Expert&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
-          <mxGeometry x="-70" y="2096.5" width="200" height="127" as="geometry" />
+          <mxGeometry x="-180" y="2096.5" width="200" height="127" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-127" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=1 1;endArrow=oval;endFill=0;" edge="1" parent="1" source="5scZ0eNsyyDxzxKI3qxd-1" target="Or0l-OPvd0LS7Cr--KHt-6">
           <mxGeometry relative="1" as="geometry" />
@@ -1226,19 +1252,19 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-1" value="&lt;div align=&quot;left&quot;&gt;UserSupportView and AgentSupportView is responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Controlling their Support object&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Knowing the latest updates on status and chatHistory&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Controller&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;GOF Patterns : Observer(Observer)&lt;br&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
-          <mxGeometry x="-130" y="1912" width="330" height="120" as="geometry" />
+          <mxGeometry x="-240" y="1912" width="330" height="120" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-124" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=1 1;endArrow=oval;endFill=0;" edge="1" parent="1" source="qrRdntrkSlh-nsNjNLeH-2" target="Or0l-OPvd0LS7Cr--KHt-29">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-2" value="&lt;div align=&quot;left&quot;&gt;Observer is responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Calling the appropriate methods used by Support&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Polymorphism&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;GOF Patterns : Strategy&lt;br&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
-          <mxGeometry x="-130" y="1282.5" width="310" height="110" as="geometry" />
+          <mxGeometry x="-240" y="1282.5" width="310" height="110" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-125" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=oval;endFill=0;dashed=1;dashPattern=1 1;" edge="1" parent="1" source="qrRdntrkSlh-nsNjNLeH-4" target="Or0l-OPvd0LS7Cr--KHt-25">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-4" value="&lt;div align=&quot;left&quot;&gt;Subject is responsible for:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Calling the appropriate methods used by Support&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Grasp Patterns : Polymorphism&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;GOF Patterns : Strategy&lt;br&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;" vertex="1" parent="1">
-          <mxGeometry x="260" y="1300" width="310" height="110" as="geometry" />
+          <mxGeometry x="150" y="1300" width="310" height="110" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-6" value="Logs" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="1188.75" y="2121.5" width="50" height="30" as="geometry" />
@@ -1518,22 +1544,40 @@
           <mxGeometry x="3023" y="3478" width="70" height="30" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-119" value="&lt;div&gt;supports&lt;/div&gt;&lt;div&gt;{Map}&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="535" y="1780" width="70" height="40" as="geometry" />
+          <mxGeometry x="425" y="1780" width="70" height="40" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-120" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="392" y="2052" width="30" height="30" as="geometry" />
+          <mxGeometry x="282" y="2052" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-121" value="1..*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="540" y="1828" width="40" height="30" as="geometry" />
+          <mxGeometry x="430" y="1828" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-122" value="chat" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="430" y="2052" width="50" height="30" as="geometry" />
+          <mxGeometry x="320" y="2052" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-134" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=oval;endFill=0;" edge="1" parent="1" source="aqzEesnVIrDPiiX5Iq-a-11" target="6BNxXYK9VHPnIdtuvKFC-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="qrRdntrkSlh-nsNjNLeH-150" value="skipTheCourrier" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="1920" y="798" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2pL3DsJjJWlg2ED6VL7D-7" value="user" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1062" y="2270" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2pL3DsJjJWlg2ED6VL7D-8" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1085" y="2218" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2pL3DsJjJWlg2ED6VL7D-10" value="agents&lt;br&gt;{ArrayList}" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="2393" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2pL3DsJjJWlg2ED6VL7D-11" value="1..*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="2408" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2pL3DsJjJWlg2ED6VL7D-14" value="observers&lt;br&gt;{Arraylist}" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1543" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2pL3DsJjJWlg2ED6VL7D-15" value="1..*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1578" width="40" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
