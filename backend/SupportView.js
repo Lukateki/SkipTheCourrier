@@ -40,13 +40,15 @@ class UserSupportView extends SupportView {
         if (this._support.getStatus == 'Resolved') {
             throw new Error("This Support issue has already been resolved.");
         }
-        this._support.setStatus('Resolved')
+        this._support.setStatus('Resolved');
+        this._support.notifyObservers();
     }
     openIssue () {
         if (this._support.getStatus == 'Unresolved') {
             throw new Error("This Support issue is already open.");
         }
-        this._support.setStatus('Unresolved')
+        this._support.setStatus('Unresolved');
+        this._support.notifyObservers();
     }
 
     // Observer Control Method
@@ -89,13 +91,15 @@ class AgentSupportView extends SupportView {
         if (this._support.getStatus == 'Resolved') {
             throw new Error("This Support issue has already been resolved.");
         }
-        this._support.setStatus('Resolved')
+        this._support.setStatus('Resolved');
+        this._support.notifyObservers();
     }
     openIssue () {
         if (this._support.getStatus == 'Unresolved') {
             throw new Error("This Support issue is already open.");
         }
-        this._support.setStatus('Unresolved')
+        this._support.setStatus('Unresolved');
+        this._support.notifyObservers();
     }
 
     // Observer Control Method
