@@ -1,62 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Page</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="icon" href="navbar.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="constants.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signup Page</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="icon" href="navbar.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="constants.css">
-
-</head>
-
-<body>
-  <div id="header"></div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(function () {
-      $("#header").load("index.html");
-    });
-  </script>
-  <div class="section login-page container-fluid">
-    <div class="row aligh-item-center">
-      <div class="col-sm-3 p-0">
-        <div class="login-form">
-          <div class="logo">
-
-          </div>
-          <div class="page-heading">
-            <h2>Create your account</h2>
-          </div>
-          <form action="">
+  <body>
+    <div id="header"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module">
+      $(function () {
+        $("#header").load("index.html");
+      });
+    </script>
+    <div class="section login-page container-fluid">
+      <div class="row aligh-item-center">
+        <div class="col-sm-3 p-0">
+          <div class="login-form">
+            <div class="logo"></div>
+            <div class="page-heading">
+              <h2>Create your account</h2>
+            </div>
             <div class="login-form-items">
               <div class="items">
                 <label for="">Email Address</label>
                 <div class="input">
-                  <input type="text" placeholder="Email Address">
+                  <input type="text" placeholder="Email Address" id="email" />
                   <i class="ri-mail-line"></i>
                 </div>
               </div>
               <div class="items">
                 <label for="">Password</label>
                 <div class="input">
-                  <input type="text" placeholder="Enter your password">
+                  <input
+                    type="text"
+                    placeholder="Enter your password"
+                    id="password"
+                  />
                   <i class="ri-lock-line"></i>
                 </div>
               </div>
               <div class="items">
                 <label for="">Confirm Password</label>
                 <div class="input">
-                  <input type="text" placeholder="Confirm your password">
+                  <input
+                    type="text"
+                    placeholder="Confirm your password"
+                    id="confirmPassword"
+                  />
                   <i class="ri-lock-line"></i>
                 </div>
               </div>
               <div class="form-signin">
-                <button class="btn">Signup Now</button>
+                <button class="btn" id="signupButton" onclick="signUp()">
+                  Signup Now
+                </button>
               </div>
               <div class="or-option">
                 <p>or</p>
@@ -65,17 +73,72 @@
                 <a class="btn" href="Loginpage.html">Login Now</a>
               </div>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-9">
-        <div class="login-extra">
-          <img src="https://svgshare.com/i/nDi.svg" alt="">
+        <div class="col-sm-9">
+          <div class="login-extra">
+            <img src="https://svgshare.com/i/nDi.svg" alt="" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </body>
+  <script type="module">
+    // TODO: Confirmation/error modal for all firebase error messages (ex: incorrect password if less than 6 characters, user already signed up, etc.)
+    // Note: User will be seen in firebase authentication page
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+    } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
-</body>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAufNUiY75mPGp9MYRYl0NUyCife5Nl_PM",
+      authDomain: "cocomelon-630ed.firebaseapp.com",
+      projectId: "cocomelon-630ed",
+      storageBucket: "cocomelon-630ed.appspot.com",
+      messagingSenderId: "513558801256",
+      appId: "1:513558801256:web:43c06e9f08f866464e84dd",
+      measurementId: "G-HPDJG68XPZ",
+    };
 
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+
+    function signUp() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      console.log(email);
+      console.log(password);
+      console.log(confirmPassword);
+      if (password && password == confirmPassword) {
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            // Pass in accessToken to backend
+            console.log(user);
+            console.log("Signed Up");
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+            console.log("Error");
+            // ..
+          });
+      } else {
+        console.log("Password does not match");
+      }
+    }
+
+    document.getElementById("signupButton").addEventListener("click", signUp);
+  </script>
 </html>
