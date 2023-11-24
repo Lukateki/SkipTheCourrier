@@ -38,9 +38,9 @@ class CarrierCatalog {
     }
 
     serialize(){
-        const serializedUsers = Array.from(this._carriers.values(), carrier => carrier.serialize());
+        const serializedCarriers = Array.from(this._carriers.values(), carrier => carrier.serialize());
         return JSON.stringify({
-            carriers: serializedUsers,
+            carriers: serializedCarriers,
         });
     }
 

@@ -38,9 +38,9 @@ class AgentCatalog {
     }
 
     serialize(){
-        const serializedUsers = Array.from(this._agents.values(), agent => agent.serialize());
+        const serializedAgents = Array.from(this._agents.values(), agent => agent.serialize());
         return JSON.stringify({
-            agents: serializedUsers,
+            agents: serializedAgents,
         });
     }
 

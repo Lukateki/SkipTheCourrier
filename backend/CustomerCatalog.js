@@ -38,9 +38,9 @@ class CustomerCatalog {
     }
 
     serialize(){
-        const serializedUsers = Array.from(this._customers.values(), customer => customer.serialize());
+        const serializedCustomers = Array.from(this._customers.values(), customer => customer.serialize());
         return JSON.stringify({
-            customers: serializedUsers,
+            customers: serializedCustomers,
         });
     }
 
