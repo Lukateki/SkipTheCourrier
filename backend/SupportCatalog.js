@@ -1,18 +1,18 @@
 class SupportCatalog {
 
     // singleton pattern
-    static #instance;
+    static _instance;
     
     static getInstance() {
-        if (!SupportCatalog.#instance) {
-            SupportCatalog.#instance = new SupportCatalog();
+        if (!SupportCatalog._instance) {
+            SupportCatalog._instance = new SupportCatalog();
         }
-        return SupportCatalog.#instance;
+        return SupportCatalog._instance;
     }
 
     constructor() {
         // to prevent further creation of SupportCatalog instances
-        if (SupportCatalog.#instance) {
+        if (SupportCatalog._instance) {
             throw new Error("Singleton class, use getInstance method.");
         }
 
@@ -224,10 +224,10 @@ class Message {
     }
     static deserialize(jsonString) {
         const data = JSON.parse(jsonString);
-        const instance = new Message(data.userID, data.userName, data.userType, data.message);
+        const _instance = new Message(data.userID, data.userName, data.userType, data.message);
 
-        instance._date = new Date(data.date);
+        _instance._date = new Date(data.date);
 
-        return instance;
+        return _instance;
     }
 }
