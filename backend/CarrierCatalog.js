@@ -48,7 +48,7 @@ class CarrierCatalog {
         const data = JSON.parse(jsonString);
         const deserializedCarriers = data.carriers.map(carrierData => Carrier.deserialize(carrierData));
 
-        this._carriers = new Map(deserializedCarriers.map(carrier => [carrier.getUserID(), carrier]));
+        this._carriers = new Map(deserializedCarriers.map(carrier => [carrier.getID(), carrier]));
     }
 }
 

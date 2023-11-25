@@ -33,12 +33,18 @@ class UserCatalog {
         this._users.set(name, user);
         return user;
     }
-    getUser(name, password) {
+    authenticateUser(name, password) {
         if(!this._users.get(name)){
             throw new Error("Invalid User! User not found.");
         }
         if(!this._users.get(name).validate(password)){
             throw new Error("Invalid Password!");
+        }
+        return this._users.get(name);
+    }
+    getUser(name){
+        if (this._users.get(name)){
+            throw new Error("User not fount.");
         }
         return this._users.get(name);
     }
@@ -57,15 +63,17 @@ class UserCatalog {
     serialize(){
         const serializedUsers = Array.from(this._users.values(), user => user.serialize());
         return JSON.stringify({
+            userCount: this._userCount,
             users: serializedUsers,
         });
     }
 
     deserialize(jsonString) {
         const data = JSON.parse(jsonString);
-        const deserializesUsers = data.users.map(userData => User.deserialize(userData));
+        const deserializedUsers = data.users.map(userData => User.deserialize(userData));
 
         this._users = new Map(deserializedUsers.map(user => [user.getID(), user]));
+        this._userCount = data.userCount;
     }
 }
 

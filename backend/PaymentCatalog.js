@@ -33,7 +33,7 @@ class PaymentCatalog{
         const data = JSON.parse(jsonString);
         const deserializedPayments = data.payments.map(paymentData => Payment.deserialize(paymentData));
 
-        this._payments = new Map(deserializedPayments.map(payment => [payment.getUserID(), payment]));
+        this._payments = new Map(deserializedPayments.map(payment => [payment.getName(), payment]));
     }
 }
 
@@ -77,16 +77,39 @@ class Payment {
 }
 
 class PaypalPayment extends Payment{
-    constructor({email}){
+    constructor({name, email}){
+        super();
+        this._name = name;
         this._email = email;
     }
     makePayment () {
         // TODO : makePayment logic
     }
+    getName(){
+        return this._name;
+    }
+
+    serialize(){
+        return JSON.stringify({
+            name: this._name,
+            email: this._email,
+        })
+    }
+
+    static deserialize(jsonString){
+        const data = JSON.parse(jsonString);
+        let name = data.name;
+        let email = data.email;
+        const paypalPayment = new PaypalPayment({name, email});
+
+        return paypalPayment;
+    }
 }
 
 class CreditCard extends Payment{
-    constructor({nameOnCard, cardNumber, expirationDate, cvv}) {
+    constructor({name, nameOnCard, cardNumber, expirationDate, cvv}) {
+        super();
+        this._name = name;
         this._nameOnCard = nameOnCard;
         this._cardNumber = cardNumber;
         this._expirationDate = expirationDate;
@@ -94,5 +117,30 @@ class CreditCard extends Payment{
     }
     makePayment () {
         // TODO : makePayment logic
+    }
+    getName(){
+        return this._name;
+    }
+
+    serialize(){
+        return JSON.stringify({
+            name: this._name,
+            nameOnCard : this._nameOnCard,
+            cardNumber : this._cardNumber,
+            expirationDate : this._expirationDate,
+            cvv : this._cvv,
+        })
+    }
+
+    static deserialize(jsonString){
+        const data = JSON.parse(jsonString);
+        let name = data.name;
+        let nameOnCard = data.nameOnCard;
+        let cardNumber = data.cardNumber;
+        let expirationDate = data.expirationDate;
+        let cvv = data.cvv;
+        const paypalPayment = new PaypalPayment({name, nameOnCard, cardNumber, expirationDate, cvv});
+
+        return paypalPayment;
     }
 }

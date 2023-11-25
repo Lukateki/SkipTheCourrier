@@ -48,7 +48,7 @@ class CustomerCatalog {
         const data = JSON.parse(jsonString);
         const deserializedCustomers = data.customers.map(customerData => Customer.deserialize(customerData));
 
-        this._customers = new Map(deserializedCustomers.map(customer => [customer.getUserID(), customer]));
+        this._customers = new Map(deserializedCustomers.map(customer => [customer.getID(), customer]));
     }
 }
 
@@ -103,7 +103,7 @@ class Customer{
             name: this._name,
             phone: this._phone,
             email: this._email,
-            address: this._address,
+            address: this._address.serialize(),
             paymentCatalog: this._paymentCatalog.serialize(),
         })
     }
@@ -115,7 +115,7 @@ class Customer{
         if(data.name){customer._name = data.name;}
         if(data.phone){customer._phone = data.phone;}
         if(data.email){customer._email = data.email;}
-        if(data.address){customer._address = data.address;}
+        customer._address = Address.deserialize(data.address);
         customer._paymentCatalog = PaymentCatalog.deserialize(data.paymentCatalog);
 
         return customer;

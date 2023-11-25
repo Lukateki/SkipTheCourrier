@@ -48,7 +48,7 @@ class AgentCatalog {
         const data = JSON.parse(jsonString);
         const deserializedAgents = data.agents.map(agentData => Agent.deserialize(agentData));
 
-        this._agents = new Map(deserializedAgents.map(agent => [agent.getUserID(), agent]));
+        this._agents = new Map(deserializedAgents.map(agent => [agent.getID(), agent]));
     }
 }
 
