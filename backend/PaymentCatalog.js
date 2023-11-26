@@ -71,7 +71,7 @@ class PaymentFactory {
 const PaymentType = Object.freeze(['paypal', 'credit']);
 
 class Payment {
-    makePayment () {
+    makePayment (amount) {
         throw new Error("makePayment() not defined.");
     }
 }
@@ -82,7 +82,7 @@ class PaypalPayment extends Payment{
         this._name = name;
         this._email = email;
     }
-    makePayment () {
+    makePayment (amount) {
         // TODO : makePayment logic
     }
     getName(){
@@ -115,7 +115,7 @@ class CreditPayment extends Payment{
         this._expirationDate = expirationDate;
         this._cvv = cvv;
     }
-    makePayment () {
+    makePayment (amount) {
         // TODO : makePayment logic
     }
     getName(){
