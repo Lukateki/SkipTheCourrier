@@ -106,7 +106,7 @@ class PaypalPayment extends Payment{
     }
 }
 
-class CreditCard extends Payment{
+class CreditPayment extends Payment{
     constructor({name, nameOnCard, cardNumber, expirationDate, cvv}) {
         super();
         this._name = name;

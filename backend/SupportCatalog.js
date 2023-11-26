@@ -46,6 +46,8 @@ class SupportCatalog {
     }
 }
 
+const supportStatus = Object.freeze(['Unresolved', 'Resolved']);
+
 class Support extends Subject {
     constructor(supportID, order, user, issue) {
         super();
@@ -55,7 +57,7 @@ class Support extends Subject {
         this._order = order;
         this._user = user;
         this._issue = issue;
-        this._status = 'Unresolved';
+        this._status = supportStatus[0];
         this._agents = [];
         this._observers = [];
         this._chat = new Chat();
