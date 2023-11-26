@@ -1,8 +1,10 @@
+import Package from './src/models/Package';
+
 class PackageCatalog {
     static _instance;
     static _packageCount;
 
-    static get_instance(){
+    static getInstance(){
         if (!PackageCatalog._instance){
             PackageCatalog._instance = new PackageCatalog();
         }
@@ -57,80 +59,4 @@ class PackageCatalog {
     }
 }
 
-class Package{
-    constructor(id, size, weight){
-        this._id = id;
-        this._size = size;
-        this._weight = weight;
-    }
-    getID(){
-        return this.id;
-    }
-    getSize(){
-        return this._size;
-    }
-    getWeight(){
-        return this._weight;
-    }
-    setSize(size){
-        this._size = size;
-    }
-    setWeight(weight){
-        this._weight = weight;
-    }
-
-    serialize() {
-        return JSON.stringify({
-            id: this._id,
-            size: this._size.serialize(),
-            weight: this._weight.serialize(),
-        })
-    }
-
-    static deserialize(jsonString){
-        const data = JSON.parse(jsonString);
-        const size = Size.deserialize(data.size);
-        const weight = Size.deserialize(data.weight);
-        const package = new Package(data.id, size, weight);
-
-        return package;
-    }
-}
-
-class Size{
-    constructor(lengthCm, widthCm, heightCm){
-        this._length = lengthCm;
-        this._width = widthCm;
-        this.height = heightCm;
-    }
-    getLengthCm(){
-        return this._length;
-    }
-    getWidthCm(){
-        return this._width;
-    }
-    getHeightCm(){
-        return this._height;
-    }
-    getLengthInch(){
-        return (this._length * 0.393701);
-    }
-    getWidthInch(){
-        return (this._width * 0.393701);
-    }
-    getHeightInch(){
-        return (this._height * 0.393701);
-    }
-}
-
-class Weight{
-    constructor(weightKg){
-        this._weight = weightKg;
-    }
-    getWeightKg(){
-        return this._weight;
-    }
-    getWeightLbs(){
-        return (this._weight * 2.20462);
-    }
-}
+export default PackageCatalog;

@@ -22,3 +22,5 @@ class Address{
         return this._country
     }
 }
+
+export default Address;
