@@ -19,9 +19,9 @@ class QuotationCatalog{
         this._quotationCount = 0;
     }
 
-    addQuotation(src, dst){
+    addQuotation(src, dst, package){
         let newQuotationID = this._quotationCount++;
-        let quotation = new Quotation(newQuotationID, src, dst);
+        let quotation = new Quotation(newQuotationID, src, dst, package);
         this._quotations.set(newQuotationID, quotation);
         return quotation;
     }

@@ -2,11 +2,12 @@ import Address from './src/models/Address'
 import Package from './src/models/Package'
 
 class Quotation{
-    constructor(id, src, dst){
+    constructor(id, src, dst, package){
         this._id = id;
         this._src = src;
         this._dst = dst;
         this._packages = [];
+        this._packages.push(package);
     }
     getID(){
         return this.id;

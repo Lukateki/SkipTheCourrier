@@ -35,9 +35,9 @@ class Transaction{
     getStatus(){
         return this._status;
     }
-    setPayment(payment, paymentType){
+    setPayment(payment){
         this._payment = payment;
-        this._paymentType = paymentType;
+        this._paymentType = payment.constructor.name;
     }
     setBillingAddress(billingAddress){
         this._billingAddress = billingAddress;
@@ -48,6 +48,7 @@ class Transaction{
 
     makePayment(total){
         response = this._payment.makePayment(total);
+        // rest of logic
     }
     
 
