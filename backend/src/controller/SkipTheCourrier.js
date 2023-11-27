@@ -59,6 +59,15 @@ class SkipTheCourrier{
         let createTransaction = function (customerID, quotationID){
             return this._transactionCatalog.addTransaction(customerID, quotationID);
         }
+        let createSupport = function (userID, orderID, issue){
+            return this._supportCatalog.addSupport(userID, orderID, issue);
+        }
+        let createUserSupportView = function (user, support){
+            return new UserSupportView(user, support);
+        }
+        let createReview = function (comment, rating){
+            return this._reviewCatalog.addRevier(rating, comment);
+        }
     }
 
     static requestQuotationProposal(lengthCm, widthCm, heightCm, weightKg, source, destination){
@@ -75,6 +84,7 @@ class SkipTheCourrier{
     }
 
     static makePayment(orderID, paymentName, billingAddress){
+        let billingAddr = this.parseAddress(billingAddress);
         let order = this._orderCatalog.getOrder(orderID);
         let customerID = order.getCustomerID();
         let quotationID = order.getQuotationID();
@@ -82,7 +92,6 @@ class SkipTheCourrier{
         let payment = fetchCustomerPayment(customerID, paymentName);
         let transaction = createTransaction(customerID, quotationID);
         transaction.setPayment(payment);
-        let billingAddr = this.parseAddress(billingAddress)
         transaction.setBillingAddress(billingAddr);
         let total = quotation.getTotal();
         transaction.makePayment(total); // maybe return something
@@ -93,7 +102,19 @@ class SkipTheCourrier{
         return order.getStatus();
     }
 
-    
+    static requestSupport(userID, orderID, issue){
+        let user = this._userCatalog.getUser(userID);
+        let support = createSupport(userID, orderID, issue);
+        let order = this._orderCatalog.getOrder(orderID);
+        if (order.getCustomerID() !== userID && order.getCarrierID() !== userID){
+            throw new Error("User not allowed to request support for this order.");
+        }
+        return this.createUserSupportView(user, support);
+    }
+
+    static reviewService(comment, rating){
+        return this.createReview(comment, rating);
+    }
 
 }
 
