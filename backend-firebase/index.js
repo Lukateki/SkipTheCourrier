@@ -315,3 +315,276 @@ app.post("/creditCardPayment", (req, response) => {
       response.status(400).send("Error verifying token: " + error);
     });
 });
+
+app.get("/getPendingRequests", (req, response) => {
+  // get request only is status is pending
+  admin
+    .database()
+    .ref("requests")
+    .orderByChild("status")
+    .equalTo("pending")
+    .once("value", (snapshot) => {
+      if (snapshot.exists()) {
+        // User already exists
+        console.log("Requests found");
+        response.status(200).send({
+          message: "Requests found",
+          requests: snapshot.val(),
+        });
+        return;
+      } else {
+        // User already exists
+        console.log("No requests found");
+        response.status(400).send("No requests found");
+        return;
+      }
+    })
+    .catch((error) => {
+      console.log("Error getting requests: " + error);
+      response.status(400).send("Error getting requests: " + error);
+    });
+});
+
+app.post("/startDelivery", (req, response) => {
+  if (!req.body.idToken) {
+    response.status(400).send("No idToken provided");
+    return;
+  }
+  if (!req.body.deliveryId) {
+    response.status(400).send("No deliveryId provided");
+    return;
+  }
+  const idToken = req.body.idToken;
+  const deliveryId = req.body.deliveryId;
+
+  admin
+    .auth()
+    .verifyIdToken(idToken)
+    .then((decodedToken) => {
+      const userUid = decodedToken.uid;
+      console.log("User id: " + userUid);
+
+      admin
+        .database()
+        .ref(`requests/${deliveryId}`)
+        .once("value", (snapshot) => {
+          if (snapshot.exists()) {
+            // User already exists
+            const requestInfo = parseJSONOrString(snapshot.val());
+            console.log("User exists, start delivery");
+
+            const clientUid = requestInfo.userUid;
+
+            //update uservalues request status to inProgress
+            admin
+              .database()
+              .ref(`userValues/${clientUid}/requests/${deliveryId}`)
+              .update({
+                status: "in progress",
+              });
+
+            //update request status to inProgress
+            admin
+              .database()
+              .ref(`requests/${deliveryId}`)
+              .update({
+                status: "in progress",
+              })
+              .then(() => {
+                // add request to user's requests table
+                console.log("Delivery started successfully");
+                console.log("Add delivery to user's deliveries table");
+                admin
+                  .database()
+                  .ref(`userValues/${userUid}/deliveries/${deliveryId}`)
+                  .set({ ...requestInfo, status: "in progress" });
+
+                response.status(200).send({
+                  message: "Delivery started successfully",
+                  requestId: deliveryId,
+                });
+              })
+              .catch((error) => {
+                console.log("Error adding request: " + error);
+                response.status(400).send("Error adding request: " + error);
+              });
+          } else {
+            // User already exists
+            console.log("Delivery id not found");
+            response.status(400).send("Delivery id not found");
+            return;
+          }
+        })
+        .catch((error) => {
+          console.log("Error initializing user: " + error);
+          response.status(400).send("Error initializing user: " + error);
+        });
+    })
+    .catch((error) => {
+      console.log("Error verifying token: " + error);
+      response.status(400).send("Error verifying token: " + error);
+    });
+});
+
+app.post("/getDeliveries", (req, response) => {
+  if (!req.body.idToken) {
+    response.status(400).send("No idToken provided");
+    return;
+  }
+  const idToken = req.body.idToken;
+
+  admin
+    .auth()
+    .verifyIdToken(idToken)
+    .then((decodedToken) => {
+      const userUid = decodedToken.uid;
+      console.log("User id: " + userUid);
+
+      admin
+        .database()
+        .ref(`userValues/${userUid}/deliveries`)
+        .once("value", (snapshot) => {
+          if (snapshot.exists()) {
+            // User already exists
+            console.log("Deliveries found");
+            response.status(200).send({
+              message: "Deliveries found",
+              deliveries: snapshot.val(),
+            });
+            return;
+          } else {
+            // User already exists
+            console.log("No deliveries found");
+            response.status(400).send("No deliveries found");
+            return;
+          }
+        })
+        .catch((error) => {
+          console.log("Error getting deliveries: " + error);
+          response.status(400).send("Error getting deliveries: " + error);
+        });
+    })
+    .catch((error) => {
+      console.log("Error verifying token: " + error);
+      response.status(400).send("Error verifying token: " + error);
+    });
+});
+
+app.post("/updateStatus", (req, response) => {
+  if (!req.body.idToken) {
+    response.status(400).send("No idToken provided");
+    return;
+  }
+  if (!req.body.newStatus) {
+    response.status(400).send("No newStatus provided");
+    return;
+  }
+  if (!req.body.deliveryId) {
+    response.status(400).send("No deliveryId provided");
+    return;
+  }
+  const idToken = req.body.idToken;
+  const newStatus = req.body.newStatus;
+  const deliveryId = req.body.deliveryId;
+
+  admin
+    .auth()
+    .verifyIdToken(idToken)
+    .then((decodedToken) => {
+      const userUid = decodedToken.uid;
+      console.log("User id: " + userUid);
+
+      admin
+        .database()
+        .ref(`requests/${deliveryId}`)
+        .once("value", (snapshot) => {
+          if (snapshot.exists()) {
+            //update uservalues request status to newStatus
+            const requestInfo = parseJSONOrString(snapshot.val());
+
+            const clientUid = requestInfo.userUid;
+            admin
+              .database()
+              .ref(`userValues/${clientUid}/requests/${deliveryId}`)
+              .update({
+                status: newStatus,
+              });
+
+            // update deliverer's status to newStatus
+            console.log("Delivery started successfully");
+            console.log("Add delivery to user's deliveries table");
+            admin
+              .database()
+              .ref(`userValues/${userUid}/deliveries/${deliveryId}`)
+              .update({
+                status: newStatus,
+              });
+
+            //update request status to newStatus
+            admin.database().ref(`requests/${deliveryId}`).update({
+              status: newStatus,
+            });
+
+            response.status(200).send({
+              message: "Delivery started successfully",
+              requestId: deliveryId,
+            });
+          } else {
+            // User already exists
+            console.log("Delivery id not found");
+            response.status(400).send("Delivery id not found");
+            return;
+          }
+        })
+        .catch((error) => {
+          console.log("Error adding request: " + error);
+          response.status(400).send("Error adding request: " + error);
+        });
+    })
+    .catch((error) => {
+      console.log("Error verifying token: " + error);
+      response.status(400).send("Error verifying token: " + error);
+    });
+});
+
+app.post("/getRequests", (req, response) => {
+  if (!req.body.idToken) {
+    response.status(400).send("No idToken provided");
+    return;
+  }
+  const idToken = req.body.idToken;
+
+  admin
+    .auth()
+    .verifyIdToken(idToken)
+    .then((decodedToken) => {
+      const userUid = decodedToken.uid;
+      console.log("User id: " + userUid);
+
+      admin
+        .database()
+        .ref(`userValues/${userUid}/requests`)
+        .once("value", (snapshot) => {
+          if (snapshot.exists()) {
+            console.log("Requests found");
+            response.status(200).send({
+              message: "Requests found",
+              requests: snapshot.val(),
+            });
+            return;
+          } else {
+            console.log("No delivery requests found");
+            response.status(400).send("No delivery requests found");
+            return;
+          }
+        })
+        .catch((error) => {
+          console.log("Error getting requests: " + error);
+          response.status(400).send("Error getting requests: " + error);
+        });
+    })
+    .catch((error) => {
+      console.log("Error verifying token: " + error);
+      response.status(400).send("Error verifying token: " + error);
+    });
+});

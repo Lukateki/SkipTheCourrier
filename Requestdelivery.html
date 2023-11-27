@@ -306,6 +306,9 @@
           // call request delivery backend
           const url = "http://localhost:8080/requestForDelivery";
           const requestJson = {
+            // Update this to get values from form but keep the same name (locationFrom, locationTo)
+            locationFrom: "Toronto",
+            locationTo: "Montreal",
             // TODO: get values from form
           };
           var params = {

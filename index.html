@@ -92,6 +92,16 @@
           <li class="nav-item">
             <a class="nav-link" href="Support.html">Support</a>
           </li>
+        </ul>       
+         <ul class="navbar-nav mr-auto" id="navListDeliverer">
+          <li class="nav-item">
+            <a class="nav-link" href="SelectPackages.html">Select Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="MyPackages.html"
+              >My Packages</a
+            >
+          </li>
         </ul>
         <button
           class="nav-link my-2 my-sm-0"
@@ -141,10 +151,29 @@
         document.cookie = "tokenId=; Max-Age=-99999999;";
         document.cookie = "accountType=; Max-Age=-99999999;";
       });
+
+      // check if user is a deliverer
+      const accountType = obtainCookie("accountType");
+      if (accountType == "deliverer") {
+        // if deliverer, make deliverer navlist items visible
+        document.getElementById("navListDeliverer").style.visibility =
+          "visible";
+          document.getElementById("navList").style.display =
+          "none";
+      } 
+      
+      else if (accountType == "client"){
+        // if not deliverer, make deliverer navlist items invisible
+        document.getElementById("navListDeliverer").style.display =
+          "none";
+          document.getElementById("navList").style.visibility =
+          "visible";
+      }
       
     }else{
       // Make navlist items invisible
       document.getElementById("navList").style.visibility = "hidden";
+      document.getElementById("navListDeliverer").style.visibility = "hidden";
       document.getElementById("buttonHref").addEventListener("click", () => {
         window.location.href = "Signup.html";
       });
