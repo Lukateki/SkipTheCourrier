@@ -588,3 +588,28 @@ app.post("/getRequests", (req, response) => {
       response.status(400).send("Error verifying token: " + error);
     });
 });
+
+app.post("/quotationPrice",(req, response)=>{
+  if (!req.body.weightOfPackage) {
+    response.status(400).send("No weight of package provided");
+    return;
+  }
+  if (!req.body.dimensionOfPackage) {
+    response.status(400).send("No dimension of package provided");
+    return;
+  }
+  if (!req.body.destinationOfPackage) {
+    response.status(400).send("No destination of package provided");
+    return;
+  }
+  var weightOfPackage = parseInt(req.body.weightOfPackage)
+  var dimensionOfPackage = parseInt(req.body.dimensionOfPackage)
+  var destinationOfPackage = req.body.destinationOfPackage
+  var price
+  if (destinationOfPackage.toLowerCase() =="canada")
+     price = weightOfPackage+dimensionOfPackage
+  else
+     price = (weightOfPackage+dimensionOfPackage)*2
+
+  return response.status(200).send({price:price})
+});
