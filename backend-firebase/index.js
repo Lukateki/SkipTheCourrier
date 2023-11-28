@@ -64,7 +64,7 @@ app.post("/signUp", (req, response) => {
   }
   const idToken = req.body.idToken;
   const accountType = req.body.accountType;
-  console.log("inside initializeUser");
+  console.log("inside signUp");
 
   admin
     .auth()
@@ -589,7 +589,7 @@ app.post("/getRequests", (req, response) => {
     });
 });
 
-app.post("/quotationPrice",(req, response)=>{
+app.post("/quotationPrice", (req, response) => {
   if (!req.body.weightOfPackage) {
     response.status(400).send("No weight of package provided");
     return;
@@ -602,14 +602,51 @@ app.post("/quotationPrice",(req, response)=>{
     response.status(400).send("No destination of package provided");
     return;
   }
-  var weightOfPackage = parseInt(req.body.weightOfPackage)
-  var dimensionOfPackage = parseInt(req.body.dimensionOfPackage)
-  var destinationOfPackage = req.body.destinationOfPackage
-  var price
-  if (destinationOfPackage.toLowerCase() =="canada")
-     price = weightOfPackage+dimensionOfPackage
-  else
-     price = (weightOfPackage+dimensionOfPackage)*2
+  var weightOfPackage = parseInt(req.body.weightOfPackage);
+  var dimensionOfPackage = parseInt(req.body.dimensionOfPackage);
+  var destinationOfPackage = req.body.destinationOfPackage;
+  var price;
+  if (destinationOfPackage.toLowerCase() == "canada")
+    price = weightOfPackage + dimensionOfPackage;
+  else price = (weightOfPackage + dimensionOfPackage) * 2;
 
-  return response.status(200).send({price:price})
+  return response.status(200).send({ price: price });
+});
+
+app.post("/contactForm", (req, response) => {
+  if (!req.body.idToken) {
+    response.status(400).send("No idToken provided");
+    return;
+  }
+  if (!req.body.contactJson) {
+    response.status(400).send("No contactJson provided");
+    return;
+  }
+  const idToken = req.body.idToken;
+  const requestId = uuidv4();
+  const contactJson = req.body.contactJson;
+
+  admin
+    .auth()
+    .verifyIdToken(idToken)
+    .then((decodedToken) => {
+      const userUid = decodedToken.uid;
+      console.log("User id: " + userUid);
+      //update request status to newStatus
+      admin
+        .database()
+        .ref(`contactUs/${requestId}`)
+        .update({
+          ...contactJson,
+          userId: userUid,
+        });
+
+      response.status(200).send({
+        message: "Contact form submitted successfully",
+      });
+    })
+    .catch((error) => {
+      console.log("Error verifying token: " + error);
+      response.status(400).send("Error verifying token: " + error);
+    });
 });
